@@ -1,6 +1,8 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\AddAdvertisementController;
+use App\Http\Controllers\GetAdvertisementController;
+use App\Http\Controllers\GetAdvertisementsListController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +16,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::get('/show_ads_list', GetAdvertisementsListController::class);
+
+Route::get('/show_ad', GetAdvertisementController::class);
+
+Route::post('/add_ad', AddAdvertisementController::class);
