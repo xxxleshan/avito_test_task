@@ -13,7 +13,7 @@ class GetAdvertisementController extends Controller
     {
         $valideAd = $request->validate(['id' => 'required|integer']);
 
-        $ad = Ad::where('id', $valideAd['id'])->first();
+        $ad = Ad::find($valideAd['id']);
 
         if ($ad !== null) {
             return $ad;
