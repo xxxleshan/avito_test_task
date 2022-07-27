@@ -12,7 +12,6 @@ class AddAdvertisementController extends Controller
 {
     public function __invoke(Request $request)
     {
-        $input = $request->all();
 
         $validated = $request->validate([
             'name' => 'required|string',
@@ -32,8 +31,5 @@ class AddAdvertisementController extends Controller
         $ad->save();
 
         return response($ad, 201);
-        /*
-        dump($validated);
-        die;*/
     }
 }
