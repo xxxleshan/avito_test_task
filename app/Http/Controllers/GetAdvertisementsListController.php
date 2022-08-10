@@ -10,6 +10,6 @@ class GetAdvertisementsListController extends Controller
 {
     public function __invoke()
     {
-        return Ad::all();
+        return Ad::paginate(2);
     }
 }
